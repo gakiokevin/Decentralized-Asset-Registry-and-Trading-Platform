@@ -1,0 +1,87 @@
+type Asset = record {
+  id : nat64;
+  status : text;
+  type_ : text;
+  value : nat64;
+  owner : text;
+  name : text;
+  description : text;
+  owner_id : nat64;
+};
+type AssetOwner = record {
+  id : nat64;
+  name : text;
+  email : text;
+  assetowneridentity_id : text;
+  is_verified : bool;
+  phone : text;
+};
+type AssetOwnerIdentity = record { id : nat64; "principal" : text };
+type AssetTransfer = record {
+  id : nat64;
+  agreed_price : nat64;
+  transfer_status : text;
+  owner_id : nat64;
+  buyer_id : nat64;
+  asset_id : nat64;
+};
+type Buyer = record {
+  id : nat64;
+  name : text;
+  email : text;
+  phone : text;
+  buyeridentity_id : text;
+};
+type BuyerIdentity = record { id : nat64; "principal" : text };
+type Error = variant {
+  TransferConflict : record { msg : text };
+  InvalidInput : record { msg : text };
+  NotFound : record { msg : text };
+  Unauthorized : record { msg : text };
+  AlreadyExists : record { msg : text };
+};
+type Result = variant { Ok : Asset; Err : Error };
+type Result_1 = variant { Ok : AssetOwnerIdentity; Err : Error };
+type Result_2 = variant { Ok : Buyer; Err : Error };
+type Result_3 = variant { Ok : BuyerIdentity; Err : Error };
+type Result_4 = variant { Ok : AssetOwner; Err : Error };
+type Result_5 = variant { Ok; Err : Error };
+type Result_6 = variant { Ok : AssetTransfer; Err : Error };
+service : {
+  add_asset : (nat64, text, text, nat64, text, text, text) -> (Result);
+  add_assetowner_identity : (text) -> (Result_1);
+  add_buyer : (text, text, text, text) -> (Result_2);
+  add_buyer_identity : (text) -> (Result_3);
+  add_owner : (text, text, text, text) -> (Result_4);
+  delete_asset : (nat64) -> (Result_5);
+  delete_asset_transfer : (nat64) -> (Result_5);
+  delete_buyer : (nat64) -> (Result_5);
+  delete_buyer_identity : (nat64) -> (Result_5);
+  delete_owner : (nat64) -> (Result_5);
+  get_asset : (nat64) -> (Result) query;
+  get_asset_transfer : (nat64) -> (Result_6) query;
+  get_assetowner_identity : (nat64) -> (Result_3) query;
+  get_buyer : (nat64) -> (Result_2) query;
+  get_buyer_identity : (nat64) -> (Result_3) query;
+  get_owner : (nat64) -> (Result_4) query;
+  transfer_asset : (nat64, nat64, nat64, nat64) -> (Result_6);
+  update_asset : (
+      nat64,
+      opt nat64,
+      opt text,
+      opt text,
+      opt nat64,
+      opt text,
+      opt text,
+      opt text,
+    ) -> (Result);
+  update_buyer : (nat64, opt text, opt text, opt text) -> (Result_2);
+  update_owner : (nat64, opt text, opt text, opt text) -> (Result_4);
+  update_transfer_asset : (
+      nat64,
+      opt nat64,
+      opt nat64,
+      opt nat64,
+      opt text,
+    ) -> (Result_6);
+}
