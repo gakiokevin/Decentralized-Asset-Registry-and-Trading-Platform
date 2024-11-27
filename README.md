@@ -1,6 +1,6 @@
-# **Decentralized Asset Registry and Trading Platform (DARTP)**  
+# **Decentrassets**  
 
-The **Decentralized Asset Registry and Trading Platform (DARTP)** is a blockchain-based solution designed to streamline the registration, verification, and trading of assets such as real estate, vehicles, or intellectual property. Built on the **Internet Computer Protocol (ICP)**, this platform ensures secure, transparent, and tamper-proof transactions, making asset management and trading more efficient.  
+The **Decentrassets** is a blockchain-based solution designed to streamline the registration, verification, and trading of assets such as real estate, vehicles, or intellectual property. Built on the **Internet Computer Protocol (ICP)**, this platform ensures secure, transparent, and tamper-proof transactions, making asset management and trading more efficient.  
 
 ## **Features**  
 
@@ -33,8 +33,8 @@ The **Decentralized Asset Registry and Trading Platform (DARTP)** is a blockchai
 
 1. **Clone the Repository**:  
    ```bash  
-   git clone https://github.com/sammy-dev/Decentralized-Asset-Registry-and-Trading-Platform  
-   cd Decentralized-Asset-Registry-and-Trading-Platform  
+   git clone https://github.com/gakiokevin/decentrassets  
+   cd   decentrassets
    ```  
 
 2. **Install Dependencies**:  
@@ -91,10 +91,10 @@ Contributions are welcome! Fork the repository, raise issues, or submit pull req
 
 - **Project Name**: Decentralized Asset Registry and Trading Platform (DARTP)  
 - **Repository**: [GitHub Repository](https://github.com/sammy-dev/Decentralized-Asset-Registry-and-Trading-Platform)  
-- **Contributors**:  
-  - [Sammy Mulandi (@sammy-dev)](https://github.com/sammy-dev)  
+- **Contributors**:    
   - [Kelvin Macharia (@gakiokevin)](https://github.com/gakiokevin)  
   - [Ian Muriuki (@ianmuriuki)](https://github.com/ianmuriuki)  
+   - [Sammy Mulandi (@sammy-dev)](https://github.com/sammy-dev)
 
 ## **Suggested Workflows**  
 
